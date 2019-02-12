@@ -17,7 +17,7 @@
     <div class ="text-muted">  
         {{$comment->created_at}}
     </div>
-        {{ $comment->content}}
+    {{ $comment->content}}
     </div>
  @endforeach
 
