@@ -45,8 +45,10 @@ class MovieController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Movie $movie)
+    public function show($id)
     {
+        $movie = Movie::findOrFail($id);
+        // \Log::info(print_r($movie,true));
         return view('movies.show',compact('movie'));
     }
 
@@ -81,6 +83,6 @@ class MovieController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
     }
 }

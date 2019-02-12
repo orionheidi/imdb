@@ -6,10 +6,11 @@
 @section('content')
 
 
-    <div>{{ $movie->title }}</div>  
+    <div>{{ $movie->title }}</div> 
+    <div>{{ $movie->genere}}</div> 
     <div>{{ $movie->storyline}}</div>
     <div>{{ $movie->director}}</div>
-
+    <div>{{ $movie->year}}</div>
         {{-- <hr/>   
     @foreach($post->comments as $comment) 
     <div class="p-4 alert alert-success">
