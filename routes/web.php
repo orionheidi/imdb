@@ -17,5 +17,10 @@ Route::get('/', function () {
 
 // Route::resource('movies','MovieController');
 
-Route::get('movies','MovieController@index');
-Route::get('/movies/{id}','MovieController@show')->name('movies.show');
+Route::resource('movies','MovieController');
+
+// Route::movies('movies','MovieController@index');
+// Route::movies('/movies/{id}','MovieController@show')->name('movies.show');
+
+// Route::get('movies','MovieController@index');
+// Route::get('/movies/{id}','MovieController@show')->name('movies.show');
