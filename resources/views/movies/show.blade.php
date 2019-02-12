@@ -20,22 +20,15 @@
         {{ $comment->content}}
     </div>
  @endforeach
-{{-- 
+
 <div class="container">
-    <form method="POST" action="{{ route('posts.comments',['id' => $post->id]) }}">
+    <form method="POST" action="{{ route('movies.comments',['id' => $movie->id]) }}">
     @csrf
-    <div class="form-group row">
-        <label for="text" class="col-4 col-form-label">Author</label>
-    <div class="col-8">
-            <input id="text" name="author" type="text" class="form-control {{ $errors->has('author') ? 'is-invalid' : '' }} " value= "{{ old('author') }}" >
-    @include('partials.invalid-feedback',['field' => 'author'])
-    </div>
-    </div>
     <div class="form-group row">
         <label for="textarea" class="col-4 col-form-label">Comment</label>
     <div class="col-8">
-        <textarea id="textarea" name="text" cols="20" rows="5" class="form-control {{ $errors->has('text') ? 'is-invalid' : '' }} " >{{ old('text') }} </textarea>
-    @include('partials.invalid-feedback',['field' => 'text'])
+        <textarea id="textarea" name="content" cols="20" rows="5" class="form-control {{ $errors->has('content') ? 'is-invalid' : '' }} " >{{ old('content') }} </textarea>
+    @include('partials.invalid-feedback',['field' => 'content'])
     </div>
     </div>
     <div class="form-group row">
@@ -43,6 +36,6 @@
         <button type="submit" class="btn btn-primary">Submit</button>
     </div>
     </form>
-</div> --}}
+</div>
 
 @endsection

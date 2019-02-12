@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Movie;
 use App\Http\Requests\CreateMovieRequest;
+use App\Http\Requests\CreateCommentRequest;
 use App\Comment;
 
 class MovieController extends Controller
@@ -64,6 +65,26 @@ class MovieController extends Controller
         $movie = Movie::findOrFail($id);
         // \Log::info(print_r($movie,true));
         return view('movies.show',compact('movie'));
+    }
+
+
+    public function addComment(CreateCommentRequest $request,$id)
+    {
+        $request->validate([
+            'content'=> 'required',
+        ]);
+
+        Comment::create([
+            'movie_id' => $id,
+            'content' => $request->content,
+        ]);
+
+        return redirect()
+        ->back();
+
+        // Post::findOrFail($id)
+        // ->addComments
+        // ->create($request->all());
     }
 
     /**

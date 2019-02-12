@@ -4,8 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-
-class CreateMovieRequest extends FormRequest
+class CreateCommentRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,11 +24,7 @@ class CreateMovieRequest extends FormRequest
     public function rules()
     {
         return [
-            'title'=> 'required',
-            'genre' => 'required',
-            'year' => 'required|numeric|between:1900,'.date('Y'),
-            'director' => 'required',
-            'storyline' => 'required|max:1000'
+            'content'=> 'required',
         ];
     }
 }
