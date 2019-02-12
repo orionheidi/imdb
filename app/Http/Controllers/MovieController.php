@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Movie;
 use App\Http\Requests\CreateMovieRequest;
+use App\Comment;
 
 class MovieController extends Controller
 {

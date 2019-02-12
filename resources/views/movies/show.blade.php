@@ -11,17 +11,16 @@
     <div>{{ $movie->storyline}}</div>
     <div>{{ $movie->director}}</div>
     <div>{{ $movie->year}}</div>
-        {{-- <hr/>   
-    @foreach($post->comments as $comment) 
+        <hr/>   
+    @foreach($movie->comments as $comment) 
     <div class="p-4 alert alert-success">
     <div class ="text-muted">  
         {{$comment->created_at}}
     </div>
-        <strong>{{$comment->author}} says: </strong>
-        {{ $comment->text}}
+        {{ $comment->content}}
     </div>
  @endforeach
-
+{{-- 
 <div class="container">
     <form method="POST" action="{{ route('posts.comments',['id' => $post->id]) }}">
     @csrf
