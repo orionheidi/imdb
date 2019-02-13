@@ -12,8 +12,8 @@
 </head>
 <body>
     @include('partials.navbar')
-
     @yield('content')
+    @include('partials.sidebar')
     {{-- @include('partials.footer') --}}
 </body>
 </html>

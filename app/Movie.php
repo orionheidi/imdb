@@ -10,6 +10,11 @@ class Movie extends Model
         'title', 'storyline', 'director','year','genre'
     ];
 
+    // public static function published()
+    // {
+    //     return self::orderBy('title', 'DESC')->get();
+    // }    
+
     public function comments(){
         return $this->hasMany(Comment::class);
     }

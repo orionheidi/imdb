@@ -15,11 +15,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 // Route::resource('movies','MovieController');
 
 Route::resource('movies','MovieController');
+// Route::resource('genres','GenresController');
 
 Route::post('movies/{id}/comments','MovieController@addComment')->name('movies.comments');
+Route::get('movies/{id}/genre','GenresController@show')->name('genres.genre');
 
 // Route::movies('movies','MovieController@index');
 // Route::movies('/movies/{id}','MovieController@show')->name('movies.show');

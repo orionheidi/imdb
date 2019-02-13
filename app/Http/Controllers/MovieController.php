@@ -21,6 +21,13 @@ class MovieController extends Controller
         return view('movies.index',compact('movies'));
     }
 
+    public function lastMoviesLimit()
+    {
+        
+        $movies = Movie::orderBy('title', 'DESC')->get();
+        return view('movies.index',compact('movies'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *

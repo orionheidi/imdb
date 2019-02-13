@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Movie;
+use DB;
 
-class GeneresController extends Controller
+class GenresController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +15,7 @@ class GeneresController extends Controller
      */
     public function index()
     {
-        //
+      
     }
 
     /**
@@ -45,7 +47,14 @@ class GeneresController extends Controller
      */
     public function show($id)
     {
-        //
+        $movies = Movie::all();
+        // $genres = Movie::where('genre',$id)->orderBy('id','desc')->get();
+        $genres = DB::table('movies')
+        ->where('genre', $id)
+        ->get();
+       
+        // return $genres;
+        return view('genres.genre',compact('genres'));
     }
 
     /**
