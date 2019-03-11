@@ -7,7 +7,7 @@
 
 
     <div>{{ $movie->title }}</div> 
-    <a href="{{ route ('genres.genre', ['id' => $movie->id]) }}"><div>{{ $movie->genre}}</div></a> 
+    <a href="{{ route ('show-genere',['genere'=> $movie->genre]) }}"><div>{{ $movie->genre}}</div></a> 
     <div>{{ $movie->storyline}}</div>
     <div>{{ $movie->director}}</div>
     <div>{{ $movie->year}}</div>

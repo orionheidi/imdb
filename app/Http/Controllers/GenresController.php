@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Movie;
-use DB;
 
 class GenresController extends Controller
 {
@@ -45,17 +44,24 @@ class GenresController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        $movies = Movie::all();
-        // $genres = Movie::where('genre',$id)->orderBy('id','desc')->get();
-        $genres = DB::table('movies')
-        ->where('genre', $id)
-        ->get();
+
+    public function show($genre) {
+        
+        $movies = Movie::where('genre',$genre)->get();
        
-        // return $genres;
-        return view('genres.genre',compact('genres'));
-    }
+        return view('genres.genre',compact('movies'));
+    } 
+    // public function show($id)
+    // {
+    //     $movies = Movie::all();
+    //     // $genres = Movie::where('genre',$id)->orderBy('id','desc')->get();
+    //     $genres = DB::table('movies')
+    //     ->where('genre', $id)
+    //     ->get();
+       
+    //     // return $genres;
+    //     return view('genres.genre',compact('genres'));
+    // }
 
     /**
      * Show the form for editing the specified resource.

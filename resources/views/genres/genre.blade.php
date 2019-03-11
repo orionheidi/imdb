@@ -11,18 +11,16 @@ All movies by genre
     <div class="row">
     <div class="col-md-8 blog-main">
       <h3 class="pb-3 mb-4 font-italic border-bottom">Imdb movies by genre</h3>
-      
-    {{-- @foreach($movies as $movie) --}}
-
+    @foreach($movies as $movie)
     <div class="blog-post">
-      <h2 class="blog-post-title">{{ $movie->title }} </h2>
+      <h2 class="blog-post-title"> <a href="{{ route ('movies.show', ['id' => $movie->id]) }}"> {{ $movie->title }}</a></h2>
       {{-- <p class="blog-post-meta"> {{ $movie->created_at }}<a href="#"> Mark</a></p> --}}
       <h2 class="blog-post-title">{{ $movie->genre }} </h2>
       <p>{{ $movie->year }}</p>
       <p>{{ str_limit($movie->storyline,30,'...') }}</p>
     </div><!-- /.blog-post -->
           
-    {{-- @endforeach --}}
+    @endforeach
 
     </div><!-- /.row -->
   </main><!-- /.container -->

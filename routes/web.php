@@ -20,9 +20,9 @@ Route::get('/', function () {
 
 Route::resource('movies','MovieController');
 // Route::resource('genres','GenresController');
-
+// Route::get('/movies/{id}','MoviesController@sideBar')->name('side-bar');
 Route::post('movies/{id}/comments','MovieController@addComment')->name('movies.comments');
-Route::get('movies/{id}/genre','GenresController@show')->name('genres.genre');
+Route::get('/genres/{genre}/genre','GenresController@show')->name('show-genere');
 
 // Route::movies('movies','MovieController@index');
 // Route::movies('/movies/{id}','MovieController@show')->name('movies.show');
